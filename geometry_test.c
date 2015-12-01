@@ -151,12 +151,12 @@ START_TEST(test_2d_area_triangle){
 	coord_2d_t a;
     coord_2d_t b;
     coord_2d_t c;
-    float exp;
+    double exp;
 
-    a.x = a.y = b.x = c.y = 0;
-    b.y = c.x = 2;
+    a.x = a.y = b.x = c.y = 0.0;
+    b.y = c.x = 2.0;
     exp = coord_2d_area_triangle(&a, &b, &c);
-    ck_assert(exp == 2);
+    ck_assert(exp == 2.0);
 }
 END_TEST
 
@@ -178,7 +178,7 @@ Suite* coord_2d_suite(void)
     tcase_add_test(tc_2d_midpoint, test_2d_midpoint);
 
 	TCase* tc_2d_area_triangle = tcase_create("coord_2d_area_triangle");
-	tcase_add_test(tc_2d_area_triangle, tc_2d_area_triangle);
+	tcase_add_test(tc_2d_area_triangle, test_2d_area_triangle);
 
     /* Add Cases to Suite */
     suite_add_tcase(s, tc_2d_eq);
