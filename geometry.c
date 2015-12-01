@@ -75,15 +75,15 @@ double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const co
 	/* Input Checks */
     if(!a){
         DEBUG(__FILE__, __LINE__, __func__, "'a' must not be NULL");
-        return NaN;
+        return 0.0;
     }
     if(!b){
         DEBUG(__FILE__, __LINE__, __func__, "'b' must not be NULL");
-        return NaN;
+        return 0.0;
     }
     if(!c){
         DEBUG(__FILE__, __LINE__, __func__, "'c' must not be NULL");
-        return NaN;
+        return 0.0;
     }
 
     /* Maths */
