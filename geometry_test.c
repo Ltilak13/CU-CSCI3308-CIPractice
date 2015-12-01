@@ -145,6 +145,21 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
+/* coord_2d Area of a triangle */
+START_TEST(test_2d_area_triangle){
+	
+	coord_2d_t a;
+    coord_2d_t b;
+    coord_2d_t c;
+    float exp;
+
+    a.x = a.y = b.x = c.y = 0;
+    b.y = c.x = 2;
+    exp = coord_2d_area_triangle(&a, &b, &c);
+    ck_assert(exp == 2);
+}
+END_TEST
+
 /* coord_2d Test Suite */
 Suite* coord_2d_suite(void)
 {
@@ -175,21 +190,6 @@ Suite* coord_2d_suite(void)
     return s;
 
 }
-
-/* coord_2d Area of a triangle */
-START_TEST(test_2d_area_triangle){
-	
-	coord_2d_t a;
-    coord_2d_t b;
-    coord_2d_t c;
-    float exp;
-
-    a.x = a.y = b.x = c.y = 0;
-    b.y = c.x = 2;
-    exp = coord_2d_area_triangle(&a, &b, &c);
-    ck_assert(exp == 2);
-}
-END_TEST
 
 /* main: run test suites and set exit status */
 int main(void){
