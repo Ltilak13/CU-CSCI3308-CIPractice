@@ -187,7 +187,7 @@ START_TEST(test_2d_area_triangle){
     a.x = a.y = b.x = c.y = 0;
     b.y = c.x = 2;
     exp = coord_2d_area_triangle(&a, &b, &c);
-    ck_assert(exp, 2);
+    ck_assert(exp == 2);
 }
 END_TEST
 
